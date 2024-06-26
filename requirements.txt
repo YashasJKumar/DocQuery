@@ -1,0 +1,11 @@
+langchain
+streamlit
+sse_starlette
+pypdf
+faiss-cpu
+groq
+langchain-groq
+langchain-google-genai
+pypdf2
+langchain-community
+langchain-google-genai
