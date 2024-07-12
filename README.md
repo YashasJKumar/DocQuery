@@ -59,14 +59,14 @@ ii] For Windows :
   ```
 
 5. Install all the requirements
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 
 6. Place your API Keys from Groq-Cloud & Google
    Go to line 31 & 89.Replace st.secrets['API_KEY'] with your respective API Key's.
 
 7. All set. Run your Application
-   ```bash
-   streamlit run documents_qna.py
-   ```
+```bash
+streamlit run documents_qna.py
+```
