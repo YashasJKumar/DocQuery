@@ -2,7 +2,7 @@
 DocQuery - Intelligent Document Interaction Application
 
 <div align="center">
-<image src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Flearning-robot&psig=AOvVaw39cPngRZhYA-e7fACW_juT&ust=1720871265253000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCOCu6JW3oYcDFQAAAAAdAAAAABAe"/>
+<image src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fbootcamp.uxdesign.cc%2Fa-step-by-step-guide-to-building-a-chatbot-based-on-your-own-documents-with-gpt-2d550534eea5&psig=AOvVaw0TapW-wVBOrlCp2SHoyYok&ust=1720872034471000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCd34O6oYcDFQAAAAAdAAAAABAS"/>
 </div>
 
 ------------------------
@@ -15,7 +15,6 @@ DocQuery - Intelligent Document Interaction Application
   <a><img src="https://custom-icon-badges.demolab.com/badge/embedding 001-FFFFFF?style=for-the-badge&logo=google"></a> &nbsp;
   <a><img src="https://custom-icon-badges.demolab.com/badge/Langchain-FBEEE9?style=for-the-badge&logo=ln"></a> &nbsp;
   <a><img src="https://custom-icon-badges.demolab.com/badge/FAISS DB-999999?style=for-the-badge&logo=faiss"></a> &nbsp;
-  <a><img src="https://custom-icon-badges.demolab.com/badge/images.png?logo=mistral"</a> &nbsp;
 </div>
 
 ------------------------
@@ -26,3 +25,40 @@ DocQuery - Intelligent Document Interaction Application
 ```bash
 git clone https://github.com/YashasJKumar/DocQuery.git
 ```
+
+2. Navigate inside the cloned Directory
+   ```bash
+   cd DocQuery
+   ```
+
+3. Create a python virtual environment to stay isolated
+   i] For MacOS-X/Linux/Unix : 
+   ```bash
+   python3 -m venv my_env
+  ```
+    ii] For Windows:
+```bash
+python -m venv my_env
+```
+
+4. Now Activate the virtual Environment
+   i] For MacOS-X/Linux/Unix :
+   ```bash
+   source my_env/bin/activate
+   ```
+   ii] For Windows :
+   - for Powershell
+
+  ```bash
+    .\venv\Scripts\Activate.ps1
+  ```
+  - for CommandPrompt
+
+  ```bash
+    .\venv\Scripts\activate.bat
+  ```
+
+5. Install all the requirements
+   ```bash
+   pip install -r requirements.txt
+   ```
