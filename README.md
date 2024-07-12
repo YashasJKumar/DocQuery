@@ -2,7 +2,7 @@
 DocQuery - Intelligent Document Interaction Application
 
 <div align="center">
-<image src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fbootcamp.uxdesign.cc%2Fa-step-by-step-guide-to-building-a-chatbot-based-on-your-own-documents-with-gpt-2d550534eea5&psig=AOvVaw0TapW-wVBOrlCp2SHoyYok&ust=1720872034471000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCd34O6oYcDFQAAAAAdAAAAABAS"/>
+<image src="https://miro.medium.com/v2/resize:fit:1400/1*Zi85PvOv8tpaB4SvpTRlHw.png"/>
 </div>
 
 ------------------------
@@ -27,27 +27,27 @@ git clone https://github.com/YashasJKumar/DocQuery.git
 ```
 
 2. Navigate inside the cloned Directory
-   ```bash
-   cd DocQuery
-   ```
+```bash
+cd DocQuery
+```
 
 3. Create a python virtual environment to stay isolated
-   i] For MacOS-X/Linux/Unix : 
-   ```bash
-   python3 -m venv my_env
-  ```
-    ii] For Windows:
+i] For MacOS-X/Linux/Unix : 
+```bash
+python3 -m venv my_env
+```
+ii] For Windows:
 ```bash
 python -m venv my_env
 ```
 
 4. Now Activate the virtual Environment
-   i] For MacOS-X/Linux/Unix :
-   ```bash
-   source my_env/bin/activate
-   ```
-   ii] For Windows :
-   - for Powershell
+i] For MacOS-X/Linux/Unix :
+```bash
+source my_env/bin/activate
+```
+ii] For Windows :
+  - for Powershell
 
   ```bash
     .\venv\Scripts\Activate.ps1
