@@ -23,7 +23,7 @@ st.sidebar.write("")
 st.sidebar.write("Upload your Document & unleash the power of Large Language Models to answer your queries.")
 chosen_model = st.sidebar.selectbox(label="Select LLM here: ", label_visibility="visible",
                             options=["Llama3-8b-8192", "Llama3-70b-8192", "Mixtral-8x7b-32768",
-                                     "Gemma-7b-It"])
+                                     "Gemma-7b-It", "Gemma2-9b-it"])
 st.sidebar.write("")
 
 # ------------------------------------- LOADING THE DOCUMENT-----------------------------------------------------------
@@ -73,14 +73,21 @@ def file_loader():
 
 # ------------------------------------- DEFINE PROMPT TEMPLATE ---------------------------------------------------------
 
-prompt_template = ChatPromptTemplate.from_template(
-    """Answer the following question based only on the provided context.Think step by step before providing the 
-    detailed answer. 
-    <context> 
-    {context} 
-    </context> 
-    Question: {input}
-    """
+prompt_template = ChatPromptTemplate.from_messages(
+    [
+        ("system", """You are an advanced AI assistant integrated with a RAG (Retrieval-Augmented Generation) system,
+                   "specialized in document analysis.
+                   If you don't know the answer,try to make up an answer based on your data not assumptions & only if 
+                   it's correct & related to it.
+                   "Response Format:
+                    Structure your responses clearly, using sections or bullet points for complex analyses.
+                    Clearly distinguish between information from documents, retrieved knowledge, and your own analysis.
+                    Clarification and Precision: If contents are unclear, ask for clarification.
+                    Be little Descriptive
+                    """
+         ),
+        ("user", "The Document is as follows : {context}. User Question : {input}")
+    ]
 )
 
 # ------------------------------------- LOAD THE LLM -------------------------------------------------------------------
@@ -118,13 +125,11 @@ if uploaded_file is not None and "vectors" in st.session_state:
     # Ask prompt from user
     if user_prompt := st.chat_input("Enter your query: "):
         message_container = st.container(height=600, border=False)
-        message_container.markdown(":red[User Prompt: ]")
+        message_container.markdown(":orange[User Prompt: ]")
         message_container.write(user_prompt)
-        with st.spinner("Generating response.."):
-            start_time = time.time()
-            response = st.session_state.retrieval_chain.invoke({"input": user_prompt})
-            st.sidebar.write("")
-            st.sidebar.markdown("\n\n\n:green[Response Time : ]" + " " +
-                                str(round((time.time() - start_time), 4)) + " sec.")
+        start_time = time.time()
+        chain = st.session_state.retrieval_chain.pick('answer')
         message_container.markdown(":blue[Response:]")
-        message_container.write(response['answer'])
+        message_container.write_stream(chain.stream({'input': user_prompt}))
+        st.sidebar.markdown("\n\n\n:green[Response Time : ]" + " " +
+                            str(round((time.time() - start_time), 2)) + " sec.")
